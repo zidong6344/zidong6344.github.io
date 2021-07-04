@@ -1,5 +1,5 @@
 # Your Website Title
-title: zidong
+title: ZIDONG
 # Your Website URL
 url: 'https://zidong6344.github.io/'
 
@@ -11,16 +11,15 @@ ga_index: UA-XXXXXXXX-X
 ga_cv: UA-XXXXXXXX-X
 
 # Index page and Profile Information
-name: zidong
-tagline: Software Developer, IoT, Reverse Engineering
-pic: profile.png # profile.png can be found at /assets/images/profile.png
-description: Full Stack Developer, IoT, Reverse Engineering
-description_tiny: 'Home: +60-4 | Studied: +1-408 | Work: +60-3'
-email: you.email.email@gmail.com
-website: melvinchng.github.io # do not add http://
-linkedin: realmelvinchng
-github: melvinchng
-twitter: '@realmelvinchng'
+name: 王子栋
+tagline: 软件开发, 嵌入式开发, 优化算法
+pic: touxiang.jpg # profile.png can be found at /assets/images/profile.png
+description: 软件开发, 嵌入式开发, 优化算法
+description_tiny: '故乡: 山西晋城 | 学校: 北京工业大学 | 学位: 硕士'
+email: 542852426@qq.com
+website: zidong6344.github.io # do not add http://
+github: zidong6344
+
 
 # Files or folders to be excluded
 exclude: [gitbook_source_code/]
