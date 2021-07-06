@@ -1,11 +1,16 @@
-# Introduction
+# 概述
 
-first paragraph
+笔记，主要包括阅读论文，学习笔记，项目开发等日常随记。
 
-## Subheader
+## 论文
 
-second paragraph
+1. AIDX
 
-### Another subheader
+## 学习笔记
 
-More information
+1. C++提高编程
+2. 排序算法
+
+## 项目开发
+
+1. FOC

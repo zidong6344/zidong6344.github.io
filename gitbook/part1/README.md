@@ -1,6 +1,4 @@
 # PAPER
 
-```python
-
-```
+###### 1.AIDX
 
