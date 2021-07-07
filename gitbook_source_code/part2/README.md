@@ -196,5 +196,149 @@ template<> bool myCompare(Person& p1, Person& p2) {
 }
 ```
 
+#### 1.3类模板
 
+##### 1.3.1类模板语法
 
+**作用**：
+
+建立一个通用的类，类中的成员数据类型可以不具体指定，用一个虚拟的类型来代表。
+
+**语法**：
+
+```C++
+template<typename T>
+```
+
+**解释**：
+
+template --- 声明创建模板
+
+typename --- 表明其后面的符号是一种数据类型，可以用class代替
+
+T --- 通用的数据类型，名称可以替换，通常为大写字母
+
+**示例**：
+
+```C++
+template<class nametype,class agetype>
+class Person {
+public:
+	Person(nametype name, agetype age) {
+		this->m_name = name;
+		this->m_age = age;
+	}
+	void showperson() {
+		cout << "name= " << this->m_name << "  age= " << this->m_age << endl;
+	}
+	nametype m_name;
+	agetype m_age;
+};
+void test1() {
+	Person<string,int> p1("孙悟空",99);
+	p1.showperson();
+}
+```
+
+总结：类模板和函数模板的语法相似，在temple后写一个类就是类模板；
+
+##### 1.3.2类模板和函数模板的区别
+
+**区别**：
+
+1. 类模板没有自动类型推导的使用方式
+2. 类模板在模板参数列表中可以有默认参数
+
+**示例**：
+
+```C++
+//1.不能自动推导类型
+//Person= p1("孙悟空", 99);//错误
+Person<string,int> p1("孙悟空",99);//正确
+//2.类模板在模板参数列表中可以有默认参数
+//template<class nametype = string, class agetype = int>
+Person<> p1("孙悟空", 99);
+```
+
+##### 1.3.3类模板中成员函数创建时机
+
+类模板中成员函数和普通类中成员函数创建时机式有区别的：
+
+- 普通类中的成员函数一开始就可以创建
+- 类模板中的成员函数在调用时才可以创建
+
+**示例**：
+
+```C++
+class Person1 {
+public:
+	void Person1show() {
+		cout << "person1" << endl;
+	}
+};
+
+class Person2 {
+public:
+	void Person2show() {
+		cout << "person2" << endl;
+	}
+};
+
+template<class T>
+class Person {
+public:
+	T obj;
+	void fun1() {obj.Person1show();}
+	void fun2() {obj.Person2show();}
+};
+void test1() {
+	Person<Person1> p1;
+	p1.fun1();
+	p1.fun2();//错误
+}
+```
+
+**总结**：
+
+类模板中的成员函数并不是一开始就创建，而是在调用时才去创建。
+
+##### 1.3.4类模板对象做函数参数
+
+**学习目标**：
+
+- 类模板实例化出的对象，向函数传参
+
+**传入方式（三种）**：
+
+1. 指定传入的类型 --- 直接显示对象中的数据类型
+2. 参数模板化        --- 将对象中参数变为模板进行传递
+3. 整个类模板化    --- 将这个对象类型  模板化进行传递
+
+**示例**：
+
+```C++
+//1.指定传入的类型
+void personshow1(Person<string, int> p1) {
+	cout << "name =  " << p1.m_name << " age= " << p1.m_age << endl;
+}
+//2.参数模板化
+template<class T1, class T2>
+void personshow2(Person<T1, T2> p1) {
+	cout << "name =  " << p1.m_name << " age= " << p1.m_age << endl;
+}
+//3.整个类模板化
+template<class T>
+void personshow3(T p1) {
+	cout << "name =  " << p1.m_name << " age= " << p1.m_age << endl;
+}
+void test1() {
+
+	Person<string,int> p1("孙悟空",99);//正确
+	personshow2(p1);
+}
+```
+
+**总结**：
+
+- 通过类模板创建的对象，可以有三种方式向函数中进行传参
+- 应用广泛的时第一种：指定传入的类型
