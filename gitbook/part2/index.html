@@ -367,6 +367,124 @@ void test() {
     }
 }
 </code></pre>
+<h4 id="13&#x7C7B;&#x6A21;&#x677F;">1.3&#x7C7B;&#x6A21;&#x677F;</h4>
+<h5 id="131&#x7C7B;&#x6A21;&#x677F;&#x8BED;&#x6CD5;">1.3.1&#x7C7B;&#x6A21;&#x677F;&#x8BED;&#x6CD5;</h5>
+<p><strong>&#x4F5C;&#x7528;</strong>&#xFF1A;</p>
+<p>&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x7C7B;&#xFF0C;&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4E0D;&#x5177;&#x4F53;&#x6307;&#x5B9A;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x4EE3;&#x8868;&#x3002;</p>
+<p><strong>&#x8BED;&#x6CD5;</strong>&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;
+</code></pre>
+<p><strong>&#x89E3;&#x91CA;</strong>&#xFF1A;</p>
+<p>template --- &#x58F0;&#x660E;&#x521B;&#x5EFA;&#x6A21;&#x677F;</p>
+<p>typename --- &#x8868;&#x660E;&#x5176;&#x540E;&#x9762;&#x7684;&#x7B26;&#x53F7;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;class&#x4EE3;&#x66FF;</p>
+<p>T --- &#x901A;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;&#x5927;&#x5199;&#x5B57;&#x6BCD;</p>
+<p><strong>&#x793A;&#x4F8B;</strong>&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> nametype,<span class="hljs-keyword">class</span> agetype&gt;
+<span class="hljs-keyword">class</span> Person {
+<span class="hljs-keyword">public</span>:
+    Person(nametype name, agetype age) {
+        <span class="hljs-keyword">this</span>-&gt;m_name = name;
+        <span class="hljs-keyword">this</span>-&gt;m_age = age;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showperson</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;name= &quot;</span> &lt;&lt; <span class="hljs-keyword">this</span>-&gt;m_name &lt;&lt; <span class="hljs-string">&quot;  age= &quot;</span> &lt;&lt; <span class="hljs-keyword">this</span>-&gt;m_age &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+    nametype m_name;
+    agetype m_age;
+};
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span> </span>{
+    Person&lt;<span class="hljs-built_in">string</span>,<span class="hljs-keyword">int</span>&gt; p1(<span class="hljs-string">&quot;&#x5B59;&#x609F;&#x7A7A;&quot;</span>,<span class="hljs-number">99</span>);
+    p1.showperson();
+}
+</code></pre>
+<p>&#x603B;&#x7ED3;&#xFF1A;&#x7C7B;&#x6A21;&#x677F;&#x548C;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x8BED;&#x6CD5;&#x76F8;&#x4F3C;&#xFF0C;&#x5728;temple&#x540E;&#x5199;&#x4E00;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x7C7B;&#x6A21;&#x677F;&#xFF1B;</p>
+<h5 id="132&#x7C7B;&#x6A21;&#x677F;&#x548C;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x533A;&#x522B;">1.3.2&#x7C7B;&#x6A21;&#x677F;&#x548C;&#x51FD;&#x6570;&#x6A21;&#x677F;&#x7684;&#x533A;&#x522B;</h5>
+<p><strong>&#x533A;&#x522B;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x6CA1;&#x6709;&#x81EA;&#x52A8;&#x7C7B;&#x578B;&#x63A8;&#x5BFC;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</li>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x5728;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;</li>
+</ol>
+<p><strong>&#x793A;&#x4F8B;</strong>&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-comment">//1.&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;</span>
+<span class="hljs-comment">//Person= p1(&quot;&#x5B59;&#x609F;&#x7A7A;&quot;, 99);//&#x9519;&#x8BEF;</span>
+Person&lt;<span class="hljs-built_in">string</span>,<span class="hljs-keyword">int</span>&gt; p1(<span class="hljs-string">&quot;&#x5B59;&#x609F;&#x7A7A;&quot;</span>,<span class="hljs-number">99</span>);<span class="hljs-comment">//&#x6B63;&#x786E;</span>
+<span class="hljs-comment">//2.&#x7C7B;&#x6A21;&#x677F;&#x5728;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;</span>
+<span class="hljs-comment">//template&lt;class nametype = string, class agetype = int&gt;</span>
+Person&lt;&gt; p1(<span class="hljs-string">&quot;&#x5B59;&#x609F;&#x7A7A;&quot;</span>, <span class="hljs-number">99</span>);
+</code></pre>
+<h5 id="133&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x65F6;&#x673A;">1.3.3&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x65F6;&#x673A;</h5>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x548C;&#x666E;&#x901A;&#x7C7B;&#x4E2D;&#x6210;&#x5458;&#x51FD;&#x6570;&#x521B;&#x5EFA;&#x65F6;&#x673A;&#x5F0F;&#x6709;&#x533A;&#x522B;&#x7684;&#xFF1A;</p>
+<ul>
+<li>&#x666E;&#x901A;&#x7C7B;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;</li>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x624D;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;</li>
+</ul>
+<p><strong>&#x793A;&#x4F8B;</strong>&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Person1 {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Person1show</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;person1&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+};
+
+<span class="hljs-keyword">class</span> Person2 {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Person2show</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;person2&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    }
+};
+
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T&gt;
+<span class="hljs-keyword">class</span> Person {
+<span class="hljs-keyword">public</span>:
+    T obj;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun1</span><span class="hljs-params">()</span> </span>{obj.Person1show();}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun2</span><span class="hljs-params">()</span> </span>{obj.Person2show();}
+};
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span> </span>{
+    Person&lt;Person1&gt; p1;
+    p1.fun1();
+    p1.fun2();<span class="hljs-comment">//&#x9519;&#x8BEF;</span>
+}
+</code></pre>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;</p>
+<p>&#x7C7B;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x51FD;&#x6570;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x521B;&#x5EFA;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x624D;&#x53BB;&#x521B;&#x5EFA;&#x3002;</p>
+<h5 id="134&#x7C7B;&#x6A21;&#x677F;&#x5BF9;&#x8C61;&#x505A;&#x51FD;&#x6570;&#x53C2;&#x6570;">1.3.4&#x7C7B;&#x6A21;&#x677F;&#x5BF9;&#x8C61;&#x505A;&#x51FD;&#x6570;&#x53C2;&#x6570;</h5>
+<p><strong>&#x5B66;&#x4E60;&#x76EE;&#x6807;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x7C7B;&#x6A21;&#x677F;&#x5B9E;&#x4F8B;&#x5316;&#x51FA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5411;&#x51FD;&#x6570;&#x4F20;&#x53C2;</li>
+</ul>
+<p><strong>&#x4F20;&#x5165;&#x65B9;&#x5F0F;&#xFF08;&#x4E09;&#x79CD;&#xFF09;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x6307;&#x5B9A;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B; --- &#x76F4;&#x63A5;&#x663E;&#x793A;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x53C2;&#x6570;&#x6A21;&#x677F;&#x5316;        --- &#x5C06;&#x5BF9;&#x8C61;&#x4E2D;&#x53C2;&#x6570;&#x53D8;&#x4E3A;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x4F20;&#x9012;</li>
+<li>&#x6574;&#x4E2A;&#x7C7B;&#x6A21;&#x677F;&#x5316;    --- &#x5C06;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;  &#x6A21;&#x677F;&#x5316;&#x8FDB;&#x884C;&#x4F20;&#x9012;</li>
+</ol>
+<p><strong>&#x793A;&#x4F8B;</strong>&#xFF1A;</p>
+<pre><code class="lang-C++"><span class="hljs-comment">//1.&#x6307;&#x5B9A;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">personshow1</span><span class="hljs-params">(Person&lt;<span class="hljs-built_in">string</span>, <span class="hljs-keyword">int</span>&gt; p1)</span> </span>{
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;name =  &quot;</span> &lt;&lt; p1.m_name &lt;&lt; <span class="hljs-string">&quot; age= &quot;</span> &lt;&lt; p1.m_age &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+<span class="hljs-comment">//2.&#x53C2;&#x6570;&#x6A21;&#x677F;&#x5316;</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T1, <span class="hljs-keyword">class</span> T2&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">personshow2</span><span class="hljs-params">(Person&lt;T1, T2&gt; p1)</span> </span>{
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;name =  &quot;</span> &lt;&lt; p1.m_name &lt;&lt; <span class="hljs-string">&quot; age= &quot;</span> &lt;&lt; p1.m_age &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+<span class="hljs-comment">//3.&#x6574;&#x4E2A;&#x7C7B;&#x6A21;&#x677F;&#x5316;</span>
+<span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">personshow3</span><span class="hljs-params">(T p1)</span> </span>{
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;name =  &quot;</span> &lt;&lt; p1.m_name &lt;&lt; <span class="hljs-string">&quot; age= &quot;</span> &lt;&lt; p1.m_age &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span> </span>{
+
+    Person&lt;<span class="hljs-built_in">string</span>,<span class="hljs-keyword">int</span>&gt; p1(<span class="hljs-string">&quot;&#x5B59;&#x609F;&#x7A7A;&quot;</span>,<span class="hljs-number">99</span>);<span class="hljs-comment">//&#x6B63;&#x786E;</span>
+    personshow2(p1);
+}
+</code></pre>
+<p><strong>&#x603B;&#x7ED3;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x901A;&#x8FC7;&#x7C7B;&#x6A21;&#x677F;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x4E09;&#x79CD;&#x65B9;&#x5F0F;&#x5411;&#x51FD;&#x6570;&#x4E2D;&#x8FDB;&#x884C;&#x4F20;&#x53C2;</li>
+<li>&#x5E94;&#x7528;&#x5E7F;&#x6CDB;&#x7684;&#x65F6;&#x7B2C;&#x4E00;&#x79CD;&#xFF1A;&#x6307;&#x5B9A;&#x4F20;&#x5165;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
 
                                 
                                 </section>
@@ -410,7 +528,7 @@ void test() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"学习笔记","level":"1.3","depth":1,"next":{"title":"项目开发","level":"1.4","depth":1,"path":"part3/README.md","ref":"part3/README.md","articles":[]},"previous":{"title":"论文","level":"1.2","depth":1,"path":"part1/README.md","ref":"part1/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/README.md","mtime":"2021-07-06T12:54:30.851Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-06T12:55:04.795Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"学习笔记","level":"1.3","depth":1,"next":{"title":"项目开发","level":"1.4","depth":1,"path":"part3/README.md","ref":"part3/README.md","articles":[]},"previous":{"title":"论文","level":"1.2","depth":1,"path":"part1/README.md","ref":"part1/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/README.md","mtime":"2021-07-07T12:42:07.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T12:50:18.959Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
