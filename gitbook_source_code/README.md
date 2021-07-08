@@ -4,12 +4,12 @@
 
 ## 论文
 
-1. AIDX
+1. [A Genetic Algorithm Based on Auxiliary-Individual-Directed Crossover for Internet-of-Things Applications](part1/AIDX.md)
 
 ## 学习笔记
 
-1. C++提高编程
-2. 排序算法
+1. [C++提高](part2/README.md)
+2. [排序算法](part2/Ranking_Algorithm.md)
 
 ## 项目开发
 

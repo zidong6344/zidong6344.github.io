@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>论文 · GitBook</title>
+        <title>排序算法 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../part2/" />
+    <link rel="next" href="../part3/" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -102,9 +102,23 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" >
             
-                <a href="./">
+                <span>
+            
+                    
+                    论文
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../part1/AIDX.html">
+            
+                <a href="../part1/AIDX.html">
             
                     
                     论文
@@ -115,16 +129,53 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../part2/">
+
+            </ul>
             
-                <a href="../part2/">
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
             
                     
                     学习笔记
             
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    C++提高
+            
                 </a>
             
 
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="Ranking_Algorithm.html">
+            
+                <a href="Ranking_Algorithm.html">
+            
+                    
+                    排序算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -184,7 +235,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >论文</a>
+        <a href=".." >排序算法</a>
     </h1>
 </div>
 
@@ -199,8 +250,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="paper">PAPER</h1>
-<h6 id="1aidx">1.AIDX</h6>
+                                <h1 id="&#x6392;&#x5E8F;&#x7B97;&#x6CD5;rankingalgorithm">&#x6392;&#x5E8F;&#x7B97;&#x6CD5;(Ranking_Algorithm)</h1>
+<h3 id="1&#x9009;&#x62E9;&#x6392;&#x5E8F;">1.&#x9009;&#x62E9;&#x6392;&#x5E8F;</h3>
+<p>&#x4F9D;&#x6B21;&#x9009;&#x51FA;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x6392;&#x5728;&#x6700;&#x524D;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;&#xFF1A;</strong></p>
+<pre><code class="lang-C++"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">class</span> T&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mySort</span><span class="hljs-params">(T arr[], <span class="hljs-keyword">int</span> num)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; i++) {
+        <span class="hljs-keyword">int</span> max = i;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; num; j++) {
+            <span class="hljs-keyword">if</span> (arr[max] &lt; arr[j])
+                max = j;
+        }
+        <span class="hljs-keyword">if</span> (max != i) {
+            T temp = arr[i];
+            arr[i] = arr[max];
+            arr[max] = temp;
+        }
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">char</span> charARR[] = <span class="hljs-string">&quot;acdbef&quot;</span>;
+    <span class="hljs-keyword">int</span> charARR_num = <span class="hljs-keyword">sizeof</span>(charARR) / <span class="hljs-keyword">sizeof</span>(charARR[<span class="hljs-number">0</span>]);
+    mySort(charARR, charARR_num);
+}
+</code></pre>
 
                                 
                                 </section>
@@ -228,12 +302,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 概述">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: C++提高">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../part2/" class="navigation navigation-next " aria-label="Next page: 学习笔记">
+                <a href="../part3/" class="navigation navigation-next " aria-label="Next page: 项目开发">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -244,7 +318,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"论文","level":"1.2","depth":1,"next":{"title":"学习笔记","level":"1.3","depth":1,"path":"part2/README.md","ref":"part2/README.md","articles":[]},"previous":{"title":"概述","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part1/README.md","mtime":"2021-07-06T02:47:16.189Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-07T12:50:18.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"排序算法","level":"1.3.2","depth":2,"next":{"title":"项目开发","level":"1.4","depth":1,"path":"part3/README.md","ref":"part3/README.md","articles":[]},"previous":{"title":"C++提高","level":"1.3.1","depth":2,"path":"part2/README.md","ref":"part2/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"part2/Ranking_Algorithm.md","mtime":"2021-07-06T11:15:59.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-08T10:52:47.900Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
