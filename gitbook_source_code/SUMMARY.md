@@ -2,7 +2,7 @@
 
 * [概述](README.md)
 * 论文
-    * [论文](part1/AIDX.md)
+    * [AIDX](part1/AIDX.md)
 * 学习笔记
     * [C++提高](part2/README.md)
     * [排序算法](part2/Ranking_Algorithm.md)
