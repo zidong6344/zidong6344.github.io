@@ -1,7 +1,7 @@
 - link: cv
-  hover_text: Link to Melvin Ch'ng Resume
-  title: CV
+  hover_text: 找工作
+  title: 简历
 
 - link: gitbook
-  hover_text: Link to Melvin Ch'ng's Dating 101
-  title: Dating 101
+  hover_text: 一些学习中的笔记
+  title: 笔记
