@@ -463,7 +463,7 @@ using namespace std;
 
 template<class T1, class T2>
 class Person {
-public:
+public: 
 	Person(T1 name, T2 age);
 
 	void showPerson();
@@ -485,4 +485,12 @@ void Person<T1, T2>::showPerson() {
 **总结**：
 
 主流的解决方式时第二种，将类模板成员函数写在一起，并将后缀名改为.hpp
+
+##### 1.3.8 类模板与友元
+
+**目标**：掌握类模板配合友元函数的类内和类外实现
+
+全局函数类内实现 - 直接在类内声明友元即可
+
+全局函数类外实现 - 需要提前让编译器知道全局函数的存在
 
