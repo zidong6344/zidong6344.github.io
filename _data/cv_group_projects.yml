@@ -1,11 +1,12 @@
-- title: Sample Group Project 1
-  link: http://www.google.com
-  time: Dec 2016 - Dec 2017
-  company: Student at You Don't Care University
-  info: Additional information about project.
+- title: 自动捡乒乓球机器人课程教育平台
+  link: 
+  time: 2019.09-至今
+  company: 
+  info: 负责机器人的电路整体方案，并使用C++在STM32上搭建ROS底盘，机器人教育平台一期已经搭设完成，并在北工大，北信科用于机器人专业的实验平台
 
-- title: Sample Group Project 2
-  link: http://www.google.com
-  time: Dec 2014
-  company: Student at You Don't Care University
-  info: Additional information about project.
+- title: 遗传算法与文本聚类
+  link: 
+  time:  2019.09-至今
+  company: 
+  info: 改进交叉算法提高遗传算法的寻优能力，并将优化算法应用在文本聚类上，撰写一篇改进遗传算法相关论文投递在SCI一区（在投），实数编码的相关代码在GITHUB上贡献在scikit-opt(star	2.4k)中
+  
